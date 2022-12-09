@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Payslip-XPay</title>
+</head>
+
+<body>
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center lh-1 mb-2">
+                <h1 class="fw-bold">X-Pay</h1>
+                    <span class="fw-normal">Payment slip for the month of <div th:text="${month}"></div> </span>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div> <span class="fw-bolder">Employee No:- </span> <div th:text="${eno}"></div> </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div> <span class="fw-bolder">Employee Name:-</span>  <div th:text="${ename}"></div> </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="mt-4 table table-bordered">
+                    <thead class="bg-dark text-white">
+                    <tr>
+                        <th scope="col">Earnings</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Deductions</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Basic Salary</th>
+                        <td th:text="${basicSalary}"></td>
+                        <td >Tax</td>
+                        <td th:text="${tax}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Allowance</th>
+                        <td th:text="${allowance}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Over Time</th>
+                        <td th:text="${overTime}"></td>
+
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-md-4">  <span class="fw-bold">Net Salary :</span><div th:text="${netSalary}"></div> </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4"> <span class="fw-bold">-----------------------------------------</span>
+                    <span class="fw-bold">Signature</span> </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
